@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="00254edd-abc4-486f-b5c8-d28d17cb82f2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     patient.`idp` AS patient_idp,
+     patient.`ida` AS patient_ida,
+     patient.`nom` AS patient_nom,
+     patient.`prenom` AS patient_prenom,
+     patient.`age` AS patient_age,
+     patient.`sexe` AS patient_sexe
+FROM
+     `patient` patient]]>
+	</queryString>
+	<field name="patient_idp" class="java.lang.Integer"/>
+	<field name="patient_ida" class="java.lang.Integer"/>
+	<field name="patient_nom" class="java.lang.String"/>
+	<field name="patient_prenom" class="java.lang.String"/>
+	<field name="patient_age" class="java.lang.Integer"/>
+	<field name="patient_sexe" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="79" uuid="7002aa7e-9662-4ea8-a025-0ef7ceac9ba1"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="79" uuid="54c2a76f-4b71-48d9-ac36-17bfdccface2"/>
+				<textElement textAlignment="Center">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[LISTE DES PATIENTS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="105" height="61" uuid="eb552708-5a36-41b3-9288-c83a130f0942"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[IDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="225" y="0" width="116" height="61" uuid="964fac67-1dd0-4a9c-b296-9159bcebec09"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[PRENOM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="105" y="0" width="120" height="61" uuid="c6a7bcea-02e0-4488-a71a-1613b21e8e65"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[NOM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="341" y="0" width="88" height="61" uuid="061c7ff0-2752-4a8f-912e-0380b9871316"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[AGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="0" width="126" height="61" uuid="c9995b40-0ccb-4e1e-a6c8-72e57ca8291b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[SEXE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="64" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="105" height="64" uuid="1db95d56-dd81-426d-8889-356005d40f59"/>
+				<textFieldExpression><![CDATA[$F{patient_ida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="2" width="120" height="62" uuid="e85ac731-a103-4bc1-9bbb-9ada16b59f97"/>
+				<textFieldExpression><![CDATA[$F{patient_nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="225" y="2" width="116" height="62" uuid="b5245eed-1cfb-449d-a090-1d641987ea90"/>
+				<textFieldExpression><![CDATA[$F{patient_prenom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="2" width="88" height="62" uuid="502d4ab3-0786-49df-9c70-8e742e9e32b6"/>
+				<textFieldExpression><![CDATA[$F{patient_age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="429" y="0" width="126" height="64" uuid="17439e15-ea7f-47c2-8fd9-5b57572084ea"/>
+				<textFieldExpression><![CDATA[$F{patient_sexe}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

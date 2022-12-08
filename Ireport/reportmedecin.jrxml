@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d804ce76-cf02-465f-8c20-5df5158eb532">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     medecin.`idmed` AS medecin_idmed,
+     medecin.`nom` AS medecin_nom,
+     medecin.`prenom` AS medecin_prenom,
+     medecin.`specialite` AS medecin_specialite,
+     medecin.`sexe` AS medecin_sexe,
+     medecin.`adresse` AS medecin_adresse,
+     medecin.`telephone` AS medecin_telephone
+FROM
+     `medecin` medecin]]>
+	</queryString>
+	<field name="medecin_idmed" class="java.lang.Integer"/>
+	<field name="medecin_nom" class="java.lang.String"/>
+	<field name="medecin_prenom" class="java.lang.String"/>
+	<field name="medecin_specialite" class="java.lang.String"/>
+	<field name="medecin_sexe" class="java.lang.String"/>
+	<field name="medecin_adresse" class="java.lang.String"/>
+	<field name="medecin_telephone" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="137" y="30" width="298" height="43" uuid="785619ad-c8ac-4563-9412-22130cfe2066"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LISTE DES MEDECINS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="87" height="20" uuid="ba927910-99d2-4504-976c-000c88e693a9"/>
+				<text><![CDATA[medecin_nom]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="2" width="107" height="20" uuid="6823b0ca-af01-4224-a684-7a94b0856c63"/>
+				<text><![CDATA[medecin_prenom]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="194" y="0" width="87" height="20" uuid="85383aea-0147-4edc-8ebb-5034db94f0d2"/>
+				<text><![CDATA[medecin_specialite]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="281" y="0" width="87" height="20" uuid="71e765fd-2984-4d2e-9792-1664365432f7"/>
+				<text><![CDATA[medecin_sexe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="368" y="2" width="87" height="20" uuid="51d4c889-0a92-454a-b40a-e24460900aaa"/>
+				<text><![CDATA[medecin_adresse]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="2" width="100" height="20" uuid="02d82c2a-e69e-4d13-8ad7-0085725bd257"/>
+				<text><![CDATA[medecin_telephone]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="87" height="20" uuid="9efd2a81-94a5-43f8-88bc-3a8961b45673"/>
+				<textFieldExpression><![CDATA[$F{medecin_nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="87" y="0" width="107" height="20" uuid="e36477e7-058a-4ad7-bc89-14fbb71f7d4a"/>
+				<textFieldExpression><![CDATA[$F{medecin_prenom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="194" y="0" width="87" height="20" uuid="b6add070-65ae-42ed-bf0f-8b3a91fe63f0"/>
+				<textFieldExpression><![CDATA[$F{medecin_specialite}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="0" width="87" height="20" uuid="c1af3379-3763-46bb-a9d0-d70e91de0cf9"/>
+				<textFieldExpression><![CDATA[$F{medecin_sexe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="368" y="0" width="87" height="20" uuid="4b1e1848-25fd-4386-b821-751d884513c6"/>
+				<textFieldExpression><![CDATA[$F{medecin_adresse}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="c76d111b-fcd5-47ce-a236-539bcdd91cb9"/>
+				<textFieldExpression><![CDATA[$F{medecin_telephone}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
